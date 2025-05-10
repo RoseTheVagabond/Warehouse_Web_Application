@@ -1,3 +1,4 @@
+using Warehouse.Repositories;
 using Warehouse.Services;
 
 namespace Warehouse;
@@ -17,6 +18,7 @@ public class Program
         builder.Services.AddControllers();
         
         builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+        builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
 
         var app = builder.Build();
 
