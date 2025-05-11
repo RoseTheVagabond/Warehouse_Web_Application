@@ -20,11 +20,6 @@ public class WarehouseController : ControllerBase
     {
         try
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var idProductWarehouse = await _warehouseService.AddProductToWarehouse(request, cancellationToken);
             return Ok(idProductWarehouse);
         }
@@ -39,11 +34,6 @@ public class WarehouseController : ControllerBase
     {
         try
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var idProductWarehouse = await _warehouseService.AddProductToWarehouseUsingProcedure(request, cancellationToken);
             return Ok(idProductWarehouse);
         }
